@@ -2,6 +2,7 @@
 using System.Text;
 using System.Linq;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace DataStructure
 {
@@ -19,6 +20,9 @@ namespace DataStructure
 
             ListsIntroduction1();
             MapIntroduction();
+            Console.WriteLine(Factorio(7));
+            ListIntroduction2();
+            MapIntroduction2();
 
         }
         public static void SimpleReplace()
@@ -136,14 +140,100 @@ namespace DataStructure
             map.Add(65, 'A');
             map.Add(66, 'B');
             map.Add(67, 'C');
-            foreach (KeyValuePair<int, char> pair in map)
+            foreach (var pair in map)
             {
-                Console.WriteLine($"keyword: {pair.Key}, value {pair.Value}");
+                Console.WriteLine($"keyword: {pair.Key}");
             }
-       
+            foreach (var pair in map)
+            {
+                Console.WriteLine($"value: {pair.Value}");
+            }
+            map.Add(68, 'D');
+            Console.WriteLine(map.Count());
+            Console.WriteLine(map[99]);
+            map.Remove(97);
+            Console.WriteLine(map.TryGetValue(100, out char result));
+            map.Clear();
+        }
+        public static BigInteger Factorio(int parameter)
+        {
+            BigInteger factorial = new BigInteger(1);
+            if (parameter != 0)
+            {
+                for (int i = 1; i < (parameter + 1); i++)
+                {
+                    factorial *= i;
+                }
+            }
+            if (parameter < 0)
+            {
+                factorial = -1;
+            }
+
+            return factorial;
+        }
+        public static void ListIntroduction2()
+        {
+            List<string> listA = new List<string>()
+            {
+                "Apple",
+                "Avocado",
+                "Blueberries",
+                "Durian",
+                "Lychee"
+            };
+            List<string> listB = listA.ToList();
+            listB.Remove("Durian");
+            listA.Insert(3, "Kiwi");
+
+            if (listA.Count() == listB.Count())
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+
+            Console.WriteLine(listA.IndexOf("Avocado"));
+            Console.WriteLine(listB.IndexOf("Durian"));
+
+            var collection = new string[] { "Passion Fruit", "Pomelo" };
+            listB.AddRange(collection);
+
+            Console.WriteLine(listA[2]);
+        }
+
+        public static void MapIntroduction2()
+        {
+            Dictionary<string, string> books = new Dictionary<string, string>()
+            {
+                { "978-1-60309-452-8", "A Letter to Jo" },
+                { "978-1-60309-459-7", "Lupus" },
+                { "978-1-60309-444-3", "Red Panda and Moon Bear" },
+                { "978-1-60309-461-0", "The Lab" }
+            };
+            foreach (var book in books)
+            {
+                Console.WriteLine($"{book.Value} (ISBN: {book.Key})");
+            }
+            books.Remove("978-1-60309-444-3");
+
+            var key = books.FirstOrDefault(pair => pair.Value == "The Lab").Key;
+            books.Remove(key);
 
 
+            foreach (var book in books)
+            {
+                Console.WriteLine($"{book.Value} (ISBN: {book.Key})");
+            }
 
+            Dictionary<string, string> newBooks = new Dictionary<string, string>()
+            {
+                {"978-1-60309-450-4", "They Called Us Enemy"},
+                {"978-1-60309-453-5", "Why Did We Trust Him?" }
+            };
+            books = books.Union(newBooks).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         }
     }
 }
