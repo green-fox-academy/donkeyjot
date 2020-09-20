@@ -46,19 +46,19 @@ namespace TestingMain
 
             return myDictionary;
         }
-        public Dictionary<char, int> LettersCountEasy(string myString)
+        public Dictionary<string, int> LettersCountEasy(string myString)
         {
-            Dictionary<char, int> myDictionary = new Dictionary<char, int>();
+            Dictionary<string, int> myDictionary = new Dictionary<string, int>();
 
             for (int i = 0; i < myString.Length; i++)
             {
-                if (myDictionary.ContainsKey(myString[i]))
+                if (myDictionary.ContainsKey(myString[i].ToString()))
                 {
-                    myDictionary[myString[i]]++;
+                    myDictionary[myString[i].ToString()]++;
                 }
                 else
                 {
-                    myDictionary.Add(myString[i], 1);
+                    myDictionary.Add(myString[i].ToString(), 1);
                 }
             }
             return myDictionary;
