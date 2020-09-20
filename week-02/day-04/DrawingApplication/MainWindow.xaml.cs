@@ -217,6 +217,7 @@ namespace DrawingApplication
             }
 
         }
+        
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
