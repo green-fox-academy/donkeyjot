@@ -112,12 +112,47 @@ namespace Pirates
 
             int otherShipScore = otherShipAlive - otherShipPassedOut - otherShipCaptainRum;
 
-            if(thisShipScore)
+            if (thisShipScore > otherShipScore)
+            {
+                Party();
+                otherShip.Losers();
+                return true;
+            }
+            else
+            {
+                Losers();
+                otherShip.Party();
+                return false;
+            }
 
-            bool result;
-            return result;
+        }
+
+        public void Party()
+        {
+            Random random = new Random();
+            int chance = random.Next(1, 4);
+
+            foreach (Pirate pirate in Crew)
+            {
+                for (int i = 0; i < new Random().Next(0, 9); i++)
+                {
+                    pirate.DrinkSomeRum();
+                }
+
+
+            }
+        }
+        public void Losers()
+        {
+            foreach (Pirate pirate in Crew)         //every pirate has 50 percent chance to survive
+            {
+                if (new Random().Next(0, 2) == 0)
+                {
+                    pirate.Die();
+                }
+            }
 
         }
     }
 }
-}
+
