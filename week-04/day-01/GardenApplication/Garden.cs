@@ -44,7 +44,7 @@ namespace GardenApplication
             {
                 plant.Info();
             }
-            Console.WriteLine();
+            Console.WriteLine( );
         }
 
         public void Add(Plant plant)

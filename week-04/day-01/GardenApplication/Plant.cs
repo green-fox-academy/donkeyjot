@@ -40,7 +40,7 @@ namespace GardenApplication
             }
 
             Console.WriteLine($"The {Color} {Type} {needsWater} water. Water is :[{Water}]");
-            
+
         }
 
     }
