@@ -6,21 +6,26 @@ namespace DivideByZero
     class Program
     {
 
-
         static void Main(string[] args)
         {
             Console.WriteLine("Please input a number:");
-            int input = Int32.Parse(Console.ReadLine());
 
+            int input;
 
             try
             {
+                input = Int32.Parse(Console.ReadLine());
                 Console.WriteLine(DivideByTen(input));
+
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Fail!!!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("fail);
                 Console.WriteLine(ex.Message);
+                Console.WriteLine("bad things happen...");
             }
             finally
             {
