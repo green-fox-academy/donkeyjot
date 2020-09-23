@@ -1,16 +1,17 @@
 ﻿using System;
 namespace GreenFoxInheritance
 {
+    public enum Gender
+    {
+        male,
+        female
+    }
+
     public class Person
     {
         protected string Name;
         protected int Age;
-        public enum Gender
-        {
-            male,
-            female
-        }
-        protected Gender gender = new Gender();
+        protected Gender gender;
     
 
 

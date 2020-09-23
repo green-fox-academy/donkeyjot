@@ -9,21 +9,21 @@ namespace GreenFoxInheritance
         {
             var people = new List<Person>();
 
-            var mark = new Person("Mark", 46, Person.Gender.male);
+            var mark = new Person("Mark", 46, Gender.male);
             people.Add(mark);
             var jane = new Person();
             people.Add(jane);
-            var john = new Student("John Doe", 20, Person.Gender.male, "BME");
+            var john = new Student("John Doe", 20, Gender.male, "BME");
             people.Add(john);
             var student = new Student();
             people.Add(student);
-            var gandhi = new Mentor("Gandhi", 148, Person.Gender.male, Mentor.Level.senior);
+            var gandhi = new Mentor("Gandhi", 148, Gender.male, Mentor.Level.senior);
             people.Add(gandhi);
             var mentor = new Mentor();
             people.Add(mentor);
             var sponsor = new Sponsor();
             people.Add(sponsor);
-            var elon = new Sponsor("Elon Musk", 46, Person.Gender.male, "SpaceX");
+            var elon = new Sponsor("Elon Musk", 46, Gender.male, "SpaceX");
             people.Add(elon);
 
             student.SkipDays(3);
