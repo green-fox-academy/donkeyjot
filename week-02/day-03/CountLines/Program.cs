@@ -1,39 +1,39 @@
 ﻿using System;
 using System.IO;
 
-namespace PrintEachLine
+namespace CountLines
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(NumberOfLines("text.txt"));
+
+        }
+        static int NumberOfLines(string filename)
+        {
             try
             {
-                string file = @"my-file.txt";
-                StreamReader reader = new StreamReader(file);
-                string line ="";
+                StreamReader reader = new StreamReader(filename);
+                string line = "";
+                int count = 0;
+
                 while (line != null)
                 {
                     line = reader.ReadLine();
                     if (line != null)
                     {
-                        Console.WriteLine(line);
+                        count++;
                     }
                 }
                 reader.Close();
+                return count;
+                
             }
             catch (FileNotFoundException)
             {
-                Console.WriteLine("Unable to read file: my-file.txt");
+                return 0;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-
-
-
 
         }
     }
