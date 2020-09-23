@@ -5,22 +5,34 @@ namespace DivideByZero
 {
     class Program
     {
-        static void ReadFile(string filename)
-        {
-            Console.WriteLine(File.ReadAllText(filename));
-        }
 
-        static void WriteFile(string filename)
-        {
 
-            File.WriteAllText(filename, "Hello world!");
-        }
         static void Main(string[] args)
         {
+            Console.WriteLine("Please input a number:");
+            int input = Int32.Parse(Console.ReadLine());
 
-            string filename = @"/Users/ondra/Documents/greenfox/donkeyjot/week-02/day-03/DivideByZero/newfile.txt";
-            WriteFile(filename);
-            ReadFile(filename);
+
+            try
+            {
+                Console.WriteLine(DivideByTen(input));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("fail);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Thanks");
+            }
+
+
+        }
+
+        private static double DivideByTen(int input)
+        {
+            return 10 / input;
 
         }
 
