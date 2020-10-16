@@ -1,0 +1,36 @@
+﻿@model Eshop.Models.ItemList
+@{
+    Layout = "_Layout";
+    }
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <table>
+
+        <tr>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        @{ foreach (var item in Model.ItemsList)
+            {
+                <tr>
+                <td>@item.EnumCategory</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price Kc</td>
+                <td>@item.QuantityOnStock</td>
+                </tr>
+            }
+        }
+    </table>
+
+
+
+</body>
+</html>

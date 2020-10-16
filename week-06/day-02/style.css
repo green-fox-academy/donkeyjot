@@ -1,0 +1,16 @@
+body {
+	color: green;
+}
+
+td, th {
+	border: 1px solid black;
+
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tbody tr:nth-child(2n) {
+background: grey;
+}
