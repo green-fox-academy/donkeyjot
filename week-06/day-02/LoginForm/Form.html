@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
     <meta character="utf-8">
     <title>Sign in</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="loginWindow">
         <h2>ACCOUNT LOGIN</h2>
-        <form method="GET" > 
-            
-            
+        <form method="POST" action="/newpage.html">
+            <div class="pform">
+                <p>
+                    <label for="username">Username</label>
+                </p>
+                <input type="text" id="username" name="username" placeholder="your username..." required>
+            </div>
+            <div class="pform">
+                <p>
+                    <label for="password">Password</label>
+                </p>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="button">
+                <input type="submit" id="submit" value="Login">
+            </div>
         </form>
-        <div class="button">
-            Login
-        </div>
     </div>
-    
+
 </body>
+
 </html>

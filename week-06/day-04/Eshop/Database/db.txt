@@ -2,5 +2,5 @@
 Frame,Specialized Tarmac SL7,The best frame in the world,129990,1
 Frame,Trek Crockett 2020 AL,Your best for cyclocross,29990,2
 Wheelset,Mavic Ksyrium,Simple aluminium wheelset,12990,0
-Wheelset,Roval CLX,Super fast wheels,59990,1
+Wheelset,Roval CLX,Super fast wheels from Specialized,59990,1
 Bottle,INEOS Grenadiers,The bottle of your favorite team,149,5

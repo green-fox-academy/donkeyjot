@@ -20,6 +20,25 @@ namespace Eshop.Models
                 .ToList();
         }
 
+        public void GetAvailable()
+        {
+            ItemsList = ItemsList.Where(i => i.QuantityOnStock > 0).ToList();
+        }
 
+        public double GetAverageStock()
+        {
+            double averageStock = ItemsList.Average(i => i.QuantityOnStock);
+            return averageStock;
+        }
+
+        public void CheapestFirst()
+        {
+            ItemsList = ItemsList.OrderBy(i => i.Price).ToList();
+        }
+
+        public void IsContaining(string keyword)
+        {
+            ItemsList = ItemsList.Where(i => i.Name.ToLower().Contains(keyword) || i.Description.ToLower().Contains(keyword)).ToList();
+        }
     }
 }
